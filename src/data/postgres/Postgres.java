@@ -7,7 +7,7 @@ import java.sql.*;
 public class Postgres implements DB {
     private Connection conn;
 
-    public Postgres() {
+    private Postgres() {
         String connectionUrl = "jdbc:postgresql://localhost:5432/simpleappdb";
 
         try {
@@ -18,6 +18,14 @@ public class Postgres implements DB {
         } catch (ClassNotFoundException e) {
             System.out.println("The driver for postgres cannot be found: " + e.getMessage());
         }
+    }
+
+    private static class PostgresHolder {
+        private final static Postgres instance = new Postgres();
+    }
+
+    public static Postgres getInstance() {
+        return PostgresHolder.instance;
     }
 
     @Override
