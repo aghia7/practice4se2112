@@ -2,7 +2,7 @@ package controllers;
 
 
 import models.User;
-import repositories.users.IUserRepository;
+import repositories.interfaces.IUserRepository;
 
 import java.util.List;
 
@@ -28,11 +28,11 @@ public class UserController {
         if (users.isEmpty())
             return "Users list is empty!";
 
-        String response = "";
+        StringBuilder response = new StringBuilder();
         for (User user : users)
-            response += user + "\n";
+            response.append(user).append("\n");
 
-        return response;
+        return response.toString();
     }
 
     public String removeById(int id) {

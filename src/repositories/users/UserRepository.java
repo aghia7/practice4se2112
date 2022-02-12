@@ -2,7 +2,7 @@ package repositories.users;
 
 import data.DB;
 import models.User;
-import repositories.EntityRepository;
+import repositories.interfaces.IUserRepository;
 
 import java.sql.*;
 import java.util.ArrayList;

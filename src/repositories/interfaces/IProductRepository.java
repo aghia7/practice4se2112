@@ -1,7 +1,6 @@
-package repositories.products;
+package repositories.interfaces;
 
 import models.Product;
-import repositories.EntityRepository;
 
 import java.util.List;
 

@@ -2,15 +2,15 @@ import controllers.ProductController;
 import controllers.UserController;
 import data.DB;
 import data.postgres.Postgres;
-import repositories.products.IProductRepository;
+import repositories.interfaces.IProductRepository;
 import repositories.products.ProductRepository;
-import repositories.users.IUserRepository;
+import repositories.interfaces.IUserRepository;
 import repositories.users.UserRepository;
 
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner sc = new Scanner(System.in);
+    private final static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         DB db = Postgres.getInstance();

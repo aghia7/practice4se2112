@@ -1,7 +1,6 @@
-package repositories.users;
+package repositories.interfaces;
 
 import models.User;
-import repositories.EntityRepository;
 
 public interface IUserRepository extends EntityRepository<User> {
 }

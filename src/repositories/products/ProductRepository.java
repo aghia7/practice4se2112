@@ -2,6 +2,7 @@ package repositories.products;
 
 import data.DB;
 import models.Product;
+import repositories.interfaces.IProductRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class ProductRepository implements IProductRepository {
 
         try {
             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM products WHERE id = ?");
+
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
 

@@ -1,7 +1,7 @@
 package controllers;
 
 import models.Product;
-import repositories.products.IProductRepository;
+import repositories.interfaces.IProductRepository;
 
 import java.util.List;
 
@@ -27,11 +27,11 @@ public class ProductController {
         if (products.isEmpty())
             return "Products list is empty!";
 
-        String response = "";
+        StringBuilder response = new StringBuilder();
         for (Product product : products)
-            response += product + "\n";
+            response.append(product).append("\n");
 
-        return response;
+        return response.toString();
     }
 
     public String removeById(int id) {
@@ -66,10 +66,10 @@ public class ProductController {
         if (products.isEmpty())
             return "Products list is empty!";
 
-        String response = "";
+        StringBuilder response = new StringBuilder();
         for (Product product : products)
-            response += product + "\n";
+            response.append(product).append("\n");
 
-        return response;
+        return response.toString();
     }
 }
