@@ -44,7 +44,7 @@ public class MyApplication {
     // Users START
     private void usersMenu() {
         while (true) {
-            System.out.println("++++++++++++++++++++++++++++++");
+            System.out.println("+++++++++++++++++++++++++++++");
             System.out.println("User`s menu");
             System.out.println("Please, select option:");
             System.out.println("1. Create user");
