@@ -2,11 +2,13 @@ import controllers.ProductController;
 import controllers.UserController;
 import data.DB;
 import data.postgres.Postgres;
+import models.Product;
 import repositories.interfaces.IProductRepository;
 import repositories.products.ProductRepository;
 import repositories.interfaces.IUserRepository;
 import repositories.users.UserRepository;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {

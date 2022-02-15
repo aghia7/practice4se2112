@@ -27,10 +27,10 @@ public class ProductRepository implements IProductRepository {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                product = new Product(rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("category"),
-                        rs.getDouble("price"));
+                product = Product.builder(rs.getString("name"))
+                        .withId(rs.getInt("id"))
+                        .withCategory(rs.getString("category"))
+                        .withPrice(rs.getDouble("price")).build();
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -48,10 +48,10 @@ public class ProductRepository implements IProductRepository {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM products");
             while (rs.next()) {
-                Product product = new Product(rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("category"),
-                        rs.getDouble("price"));
+                Product product = Product.builder(rs.getString("name"))
+                        .withId(rs.getInt("id"))
+                        .withCategory(rs.getString("category"))
+                        .withPrice(rs.getDouble("price")).build();
 
                 products.add(product);
             }
@@ -107,10 +107,10 @@ public class ProductRepository implements IProductRepository {
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Product product = new Product(rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("category"),
-                        rs.getDouble("price"));
+                Product product = Product.builder(rs.getString("name"))
+                        .withId(rs.getInt("id"))
+                        .withCategory(rs.getString("category"))
+                        .withPrice(rs.getDouble("price")).build();
 
                 products.add(product);
             }

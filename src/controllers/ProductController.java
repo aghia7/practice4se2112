@@ -50,7 +50,8 @@ public class ProductController {
     }
 
     public String create(String name, String category, double price) {
-        Product product = new Product(name, category, price);
+        Product product = Product.builder(name).withCategory(category)
+                .withPrice(price).build();
         boolean created = productRepo.create(product);
 
         if (created)

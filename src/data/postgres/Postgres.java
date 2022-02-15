@@ -6,6 +6,7 @@ import java.sql.*;
 
 public class Postgres implements DB {
     private Connection conn;
+    private final static Postgres instance = new Postgres();
 
     private Postgres() {
         String connectionUrl = "jdbc:postgresql://localhost:5432/simpleappdb";
@@ -20,12 +21,8 @@ public class Postgres implements DB {
         }
     }
 
-    private static class PostgresHolder {
-        private final static Postgres instance = new Postgres();
-    }
-
     public static Postgres getInstance() {
-        return PostgresHolder.instance;
+        return instance;
     }
 
     @Override
