@@ -1,13 +1,10 @@
 package models;
 
-import java.util.Date;
-
 public class Product {
     private int id;
     private String name;
     private String category;
     private double price;
-    private Date expiredAt;
 
     private Product() {}
 
@@ -83,16 +80,8 @@ public class Product {
         this.price = price;
     }
 
-    public Date getExpiredAt() {
-        return expiredAt;
-    }
-
-    public void setExpiredAt(Date expiredAt) {
-        this.expiredAt = expiredAt;
-    }
-
     @Override
     public String toString() {
-        return id + " " + name + " " + category + " " + price + " " + expiredAt;
+        return id + " " + name + " " + category + " " + price;
     }
 }
